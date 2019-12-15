@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hello_world/components/Editor.dart';
 import 'package:hello_world/models/Transferencia.dart';
@@ -15,7 +16,7 @@ class FormularioTransferencia  extends StatefulWidget{
 class FormularioTransferenciaState extends State<FormularioTransferencia>{
   final TextEditingController _controllerInputValue = TextEditingController();
   final TextEditingController _controllerInputNumberAccount = TextEditingController();
-
+  bool _lights = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(

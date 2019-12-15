@@ -1,5 +1,8 @@
 # ByteBank
 
+![](/screenshots/formularioTransferencia.png)
+![](/screenshots/listaTransferencia.png)
+
 A new Flutter project.
 
 ## Getting Started
