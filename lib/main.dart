@@ -1,34 +1,51 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-void main() => runApp(
-  MaterialApp(
-    home: Scaffold(
-      body: ListaTrasferencia(),
-      appBar: AppBar(title: Text("Transferências"),),
-      floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
-      ),
-    ),
-  )
-);
+void main() => runApp(ByteBankApp());
 
-class ListaTrasferencia extends StatelessWidget {
+class ByteBankApp  extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: <Widget>[
-        ItemTrasferencia(Transferencia(100.00,1000)),
-        ItemTrasferencia(Transferencia(300.00,2030)),
-      ],
+    return  MaterialApp(
+      home: Scaffold(
+        body: FormularioTransferencia(),
+      ),
     );
   }
 }
 
-class ItemTrasferencia extends StatelessWidget {
+class FormularioTransferencia  extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text("Criando Transferência"),),
+      body: Text("Teste"),
+    );
+  }
+}
+
+class ListaTransferencia extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text("Transferências"),),
+      body: Column(
+        children: <Widget>[
+          ItemTransferencia(Transferencia(100.00,1000)),
+          ItemTransferencia(Transferencia(300.00,2030)),
+        ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.add),
+      ),
+    );
+  }
+}
+
+class ItemTransferencia extends StatelessWidget {
   final Transferencia _transferencia;
 
-  ItemTrasferencia(this._transferencia);
+  ItemTransferencia(this._transferencia);
 
   @override
   Widget build(BuildContext context) {
