@@ -19,6 +19,39 @@ class ListaTransferenciaState extends State<ListaTransferencia> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text(_tituloAppBar),),
+      drawer: Drawer(child: ListView(
+        children: <Widget>[
+          Icon(Icons.account_circle, size: 60.0,),
+          ListTile(
+            title: Text("Meu Perfil"),
+            trailing: Icon(Icons.arrow_forward),
+            onTap: (){
+              debugPrint("Click on Meu Perfil");
+            },
+          ),
+          ListTile(
+            title: Text("Dashboard"),
+            trailing: Icon(Icons.arrow_forward),
+            onTap: (){
+              debugPrint("Click on Dashboard");
+            },
+          ),
+          ListTile(
+            title: Text("Configurações"),
+            trailing: Icon(Icons.arrow_forward),
+            onTap: (){
+              debugPrint("Click on Configurações");
+            },
+          ),
+          ListTile(
+            title: Text("Sair"),
+            trailing: Icon(Icons.arrow_forward),
+            onTap: (){
+              debugPrint("Click on Sair");
+            },
+          ),
+        ],
+      ),),
       body: ListView.builder(
         itemCount: widget._listTransfer.length,
         itemBuilder: (context, indice){
