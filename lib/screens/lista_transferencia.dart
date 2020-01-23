@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:hello_world/components/TileList.dart';
 import 'package:hello_world/models/ItemTransferencia.dart';
 import 'package:hello_world/models/Transferencia.dart';
+import 'package:hello_world/screens/tela_configuracoes.dart';
+import 'package:hello_world/screens/tela_dashboard.dart';
+import 'package:hello_world/screens/tela_meu_perfil.dart';
+import 'package:hello_world/screens/tela_sair.dart';
 import 'formulario_transferencia.dart';
 
 const String _tituloAppBar = "Transferências";
@@ -22,34 +27,10 @@ class ListaTransferenciaState extends State<ListaTransferencia> {
       drawer: Drawer(child: ListView(
         children: <Widget>[
           Icon(Icons.account_circle, size: 60.0,),
-          ListTile(
-            title: Text("Meu Perfil"),
-            trailing: Icon(Icons.arrow_forward),
-            onTap: (){
-              debugPrint("Click on Meu Perfil");
-            },
-          ),
-          ListTile(
-            title: Text("Dashboard"),
-            trailing: Icon(Icons.arrow_forward),
-            onTap: (){
-              debugPrint("Click on Dashboard");
-            },
-          ),
-          ListTile(
-            title: Text("Configurações"),
-            trailing: Icon(Icons.arrow_forward),
-            onTap: (){
-              debugPrint("Click on Configurações");
-            },
-          ),
-          ListTile(
-            title: Text("Sair"),
-            trailing: Icon(Icons.arrow_forward),
-            onTap: (){
-              debugPrint("Click on Sair");
-            },
-          ),
+          TileList("Meu Perfil","Click on Meu Perfil",TelaMeuPerfil()),
+          TileList("Dashboard","Click on Dashboard",TelaDashboard()),
+          TileList("Configurações","Click on Configurações",TelaConfiguracoes()),
+          TileList("Sair","Click on Sair",TelaSair()),
         ],
       ),),
       body: ListView.builder(
@@ -78,3 +59,4 @@ class ListaTransferenciaState extends State<ListaTransferencia> {
     }
   }
 }
+
