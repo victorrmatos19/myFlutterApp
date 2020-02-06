@@ -16,7 +16,6 @@ class FormularioTransferencia  extends StatefulWidget{
 class FormularioTransferenciaState extends State<FormularioTransferencia>{
   final TextEditingController _controllerInputValue = TextEditingController();
   final TextEditingController _controllerInputNumberAccount = TextEditingController();
-  bool _lights = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,9 +34,9 @@ class FormularioTransferenciaState extends State<FormularioTransferencia>{
       ),
     );
   }
-  void _createTransfer(String inputValue, String InputNumberAccount, BuildContext context) {
+  void _createTransfer(String inputValue, String inputNumberAccount, BuildContext context) {
     final double value = double.tryParse(inputValue);
-    final int numberAccount = int.tryParse(InputNumberAccount);
+    final int numberAccount = int.tryParse(inputNumberAccount);
 
     if(value != null || numberAccount!= null ){
       final trasferenciaCriada = Transferencia(value, numberAccount);

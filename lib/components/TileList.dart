@@ -2,16 +2,16 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class TileList extends StatelessWidget {
-  final String LabelText;
+  final String labelText;
   final String debugText;
   final Widget widget;
 
-  TileList(this.LabelText,this.debugText,this.widget);
+  TileList(this.labelText,this.debugText,this.widget);
 
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      title: Text(LabelText),
+      title: Text(labelText),
       trailing: Icon(Icons.arrow_forward),
       onTap: (){
         debugPrint(debugText);
